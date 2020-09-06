@@ -1,4 +1,5 @@
 import { Component,OnInit, ApplicationRef, assertPlatform } from '@angular/core';
+import{ FormControl } from '@angular/forms';  
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,8 @@ import { Component,OnInit, ApplicationRef, assertPlatform } from '@angular/core'
 })
 export class AppComponent implements OnInit{
   title = 'JustToDo';
+  ToDo =new FormControl('');
 constructor(){}
 ngOnInit(){
   }
-  
- fas() {
-  var x = document.getElementById("input_form").value;
-  document.getElementsByClassName("addet_form")[0].innerHTML+=x+"<br>";
-  alert(x)
-  document.getElementById("input_form").value="";
-}
 }

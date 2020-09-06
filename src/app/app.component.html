@@ -1,34 +1,14 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>JustToDo</title>
-    <base href="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
-</head>
-
-<body>
-
-
-
-    <div class="main_form">
-        <div class="Rootform">
-            <div class="textWelcome">welcome!</div>
-            <div class="textStart">To get started, add some items to your list:
-            </div>
-            <div class="ToDo_form">
-                <input id="input_form" type="text" class="input_form" aceholder=" I want to do ">
-                <button id="btn_form" class=" btn_form fa fa-plus" (click)="fas()"></button>
-            </div>
+<div class="main_form">
+    <div class="Rootform">
+        <div class="textWelcome">welcome!</div>
+        <div class="textStart">To get started, add some items to your list:
         </div>
-        <a href="# ">
-            <div id="demo " class="addet_form "></div>
-        </a>
+        <div class="ToDo_form">
+            <input id="input_form" type="text" class="input_form" aceholder=" I want to do " [formControl]="ToDo">
+            <button id="btn_form" class=" btn_form fa fa-plus"></button>
+        </div>
     </div>
-</body>
-
-</html>
+    <a href="# ">
+        <div id="demo " class="addet_form ">{{ToDo.value}}</div>
+    </a>
+</div>
