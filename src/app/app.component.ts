@@ -1,4 +1,4 @@
-import { Component,OnInit, ApplicationRef, assertPlatform } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import{ FormControl } from '@angular/forms';  
 
 @Component({
@@ -8,8 +8,21 @@ import{ FormControl } from '@angular/forms';
 })
 export class AppComponent implements OnInit{
   title = 'JustToDo';
-  ToDo =new FormControl('');
+  item:string="";
+  items:string[]=[];
+  i:number=0;
+  
 constructor(){}
-ngOnInit(){
+ngOnInit(){}
+added_item()
+  {
+    this.items.push(this.item);
+    alert(this.item);
+    alert(this.i);
+    this.i=this.i+1;
+    alert(this.items)
   }
+  //remove_item(){
+    //alert(this.item);
+    //delete this.items[this.i]}
 }

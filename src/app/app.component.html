@@ -4,11 +4,15 @@
         <div class="textStart">To get started, add some items to your list:
         </div>
         <div class="ToDo_form">
-            <input id="input_form" type="text" class="input_form" aceholder=" I want to do " [formControl]="ToDo">
-            <button id="btn_form" class=" btn_form fa fa-plus"></button>
+            <input type="text" class="input_form" aceholder=" I want to do " [(ngModel)]="item">
+            <button id=" btn_form " class=" btn_form fa fa-plus " (click)=' added_item() '></button>
         </div>
     </div>
     <a href="# ">
-        <div id="demo " class="addet_form ">{{ToDo.value}}</div>
+        <div id="demo " class="addet_form " *ngFor="let item of items;let i =index ">{{item}}
+            <button>
+                </button>
+        </div>
+
     </a>
 </div>

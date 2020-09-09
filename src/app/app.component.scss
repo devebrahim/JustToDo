@@ -57,6 +57,16 @@
                     margin-top: 15px;
                     margin-left: auto;
                     margin-right: auto;
-                    border-radius: 1px;
+                    border-radius: 2px;
                     border: 1px solid #2c3e50;
+                    background-color: aqua;
+                }
+                
+                .addet_form button {
+                    width: 40px;
+                    height: 40px;
+                    background-color: chartreuse;
+                    float: right;
+                    margin-right: 7px;
+                    margin-top: 4px;
                 }
