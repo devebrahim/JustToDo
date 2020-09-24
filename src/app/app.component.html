@@ -5,14 +5,20 @@
         </div>
         <div class="ToDo_form">
             <input type="text" class="input_form" aceholder=" I want to do " [(ngModel)]="item">
-            <button id=" btn_form " class=" btn_form fa fa-plus " (click)=' added_item() '></button>
+            <button type="submit" id=" btn_form " class=" btn_form fa fa-plus " (click)=' added_item() '></button>
         </div>
     </div>
     <a href="# ">
-        <div id="demo " class="addet_form " *ngFor="let item of items;let i =index ">{{item}}
-            <button>
-                </button>
+        <div class="addet_form" *ngFor="let item of items;let i =index" (mouseover)="changeText=true" (mouseout)="changeText=false">
+            <div class="added_form-text">
+                <div class="square"></div>
+                <div class="added_form-text_item">{{item}}</div>
+                <input type=" text " value={{item}}>
+            </div>
+            <div class="added_form-buttons ">
+                <button id="btn_remove" [hidden]=" !changeText" (click)=remove_item(i)>d</button>
+                <button id="btn_edit" [hidden]=" !changeText" (click)="funcEdit=false">e</button>
+            </div>
         </div>
-
     </a>
 </div>

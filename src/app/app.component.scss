@@ -59,14 +59,43 @@
                     margin-right: auto;
                     border-radius: 2px;
                     border: 1px solid #2c3e50;
-                    background-color: aqua;
+                    display: flex;
+                }
+                
+                .added_form-text {
+                    width: 80%;
+                    height: 40px;
+                    float: right;
+                    display: flex;
+                }
+                
+                .added_form-buttons {
+                    width: 20%;
+                    height: 50px;
+                    float: right;
                 }
                 
                 .addet_form button {
                     width: 40px;
                     height: 40px;
-                    background-color: chartreuse;
+                    background-color: gray;
                     float: right;
                     margin-right: 7px;
                     margin-top: 4px;
+                    border-radius: 5px;
+                }
+                
+                .square {
+                    width: 30px;
+                    height: 30px;
+                    background-color: gray;
+                    margin-left: 15px;
+                    margin-top: 10px;
+                    border-radius: 5px;
+                }
+                
+                .added_form-text_item {
+                    background-color: red;
+                    padding: 15px;
+                    color: black;
                 }
