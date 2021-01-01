@@ -1,35 +1,42 @@
-import { Component,OnInit } from '@angular/core';
-import{ FormControl } from '@angular/forms';  
-import { css } from 'jquery';
+import {Component, OnInit} from '@angular/core';
+
+interface TodoInterface {
+  title: string;
+  isHovered: boolean;
+  isEditing: boolean;
+  isDone: boolean;
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'JustToDo';
-  item:string="";
-  items:any[]=[];
-  i:number=0;
-  changeText:boolean=true;
-  funcEdit:boolean=true
+  newTodoTitle = '';
+  todoList: TodoInterface[] = [];
+  i: number = 0;
+  funcEdit: boolean = true
 
-constructor(){}
-ngOnInit(){}
+  constructor() {
+  }
 
-added_item()
-  {
-    this.items.push(this.item);
-    alert(this.items);
+  ngOnInit() {
   }
-  remove_item(i)
-  {
-    alert(i);
-   this.items.splice(i,1)
+
+  onAddTodoClick() {
+    const todo: TodoInterface = {
+      title: this.newTodoTitle,
+      isDone: false,
+      isHovered: false,
+      isEditing:false
+    };
+    this.todoList.push(todo);
+    
   }
-    edit_item(i)
-    {
-      alert(i);
-    }
+
+  onTodoRemoveClick(todoIndex: number) {
+    this.todoList.splice(todoIndex, 1);
   }
+}

@@ -4,21 +4,20 @@
         <div class="textStart">To get started, add some items to your list:
         </div>
         <div class="ToDo_form">
-            <input type="text" class="input_form" aceholder=" I want to do " [(ngModel)]="item">
-            <button type="submit" id=" btn_form " class=" btn_form fa fa-plus " (click)=' added_item() '></button>
+            <input type="text" class="input_form" placeholder="I want to do" [(ngModel)]="newTodoTitle">
+            <button type="submit" id="btn_form" class="btn_form fa fa-plus" (click)='onAddTodoClick()'></button>
         </div>
     </div>
-    <a href="# ">
-        <div class="addet_form" *ngFor="let item of items;let i =index" (mouseover)="changeText=true" (mouseout)="changeText=false">
-            <div class="added_form-text">
-                <div class="square"></div>
-                <div class="added_form-text_item">{{item}}</div>
-                <input type=" text " value={{item}}>
-            </div>
-            <div class="added_form-buttons ">
-                <button id="btn_remove" [hidden]=" !changeText" (click)=remove_item(i)>d</button>
-                <button id="btn_edit" [hidden]=" !changeText" (click)="funcEdit=false">e</button>
-            </div>
+    <div class="addet_form" *ngFor="let todo of todoList;let todoIndex =index" (mouseenter)="todo.isHovered=true;" (mouseout)="todo.isHovered=false;">
+        <div class="added_form-text">
+            <input class="inp_checkbox" type="checkbox" [checked]="todo.isDone">
+            <p class="added_form-text_item" *ngIf="!todo.isEditing">{{todo.title}}</p>
+            <input class="inp_checkboxediting" type="text" [(ngModel)]="todo.title" *ngIf="todo.isEditing">
         </div>
-    </a>
+        <div class="added_form-buttons">
+            <button class="btn btn-danger" *ngIf="!todo.isEditing" (click)=onTodoRemoveClick(todoIndex)>Remove</button>
+            <button class="btn btn-primary" *ngIf="!todo.isEditing" (click)="todo.isEditing=true;">Edit</button>
+            <button class="btn btn-success" *ngIf="todo.isEditing" (click)="todo.isEditing=false;">Save</button>
+        </div>
+    </div>
 </div>

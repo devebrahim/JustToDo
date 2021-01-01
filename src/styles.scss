@@ -17,11 +17,18 @@
                 }
                 
                 footer {
-                    background-color: gray;
+                    background-color: #ecf0f1;
                     width: 100%;
-                    height: 50px;
+                    height: 55px;
                     position: fixed;
                     left: 0;
                     bottom: 0;
                     text-align: center;
+                }
+                
+                .text_footer {
+                    margin-left: auto;
+                    margin-right: auto;
+                    height: 40%;
+                    margin-top: 15px;
                 }
